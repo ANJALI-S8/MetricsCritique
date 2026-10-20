@@ -1,0 +1,1625 @@
+{
+ "$schema_version": "1.0",
+ "generated_at": "2026-08-06T05:13:14+00:00",
+ "generator": "scripts/lib/taxonomy.py",
+ "framework": "Global Geopolitical Event & Topic Coding Framework",
+ "framework_version": "1.0",
+ "reserved_codes": [
+  "11",
+  "12"
+ ],
+ "reserved_note": "Codes 11-12 are intentionally unused so that code 13 remains the start of the CAMEO conflict-escalation ladder.",
+ "axis_notes": {
+  "theme_code": "Section A -- WHAT the document is about (subject matter). At least one required.",
+  "action": "Section B -- WHAT KIND of action occurred (escalation ladder). Conditional."
+ },
+ "axes": {
+  "risk": {
+   "label": "Risk category",
+   "kind": "legacy",
+   "hierarchical": false,
+   "status": "in_production",
+   "order": [
+    "domestic_instability",
+    "policy_shifts",
+    "project_delays",
+    "sanctions",
+    "border_conflicts",
+    "insurgencies",
+    "shipping_disruptions",
+    "pipeline_vulnerabilities",
+    "international_pressure"
+   ],
+   "entries": {
+    "domestic_instability": {
+     "display": "Domestic Instability",
+     "description": "Internal political or social unrest",
+     "model_description": "Political unrest, mass protests, riots, government collapse, coups, or internal power struggles within a single country's domestic politics, threatening that country's internal stability. Not a war between two states.",
+     "hypothesis": "This text describes political unrest, protests, or instability within one country.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a08_3_domestic_stability_narratives"
+     ]
+    },
+    "policy_shifts": {
+     "display": "Policy Shifts",
+     "description": "Sudden changes in government policy",
+     "model_description": "A national government, ministry, or regulator formally announces, reverses, or debates a specific law, trade policy, tariff, foreign-policy stance, or regulatory rule.",
+     "hypothesis": "This text describes a government announcing or changing a policy.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a01_4_treaties_agreements"
+     ]
+    },
+    "project_delays": {
+     "display": "Project Delays",
+     "description": "Named infrastructure or investment projects behind schedule",
+     "model_description": "A specific named infrastructure, energy, or investment project such as a port, railway, dam, or plant is stalled, postponed, over budget, defaulted on, or cancelled due to funding, contractor, or approval problems. Not a general economic or budget commentary unconnected to one concrete project.",
+     "hypothesis": "This text describes a specific infrastructure or investment project being delayed, over budget, or cancelled.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a03_4_initiative_status"
+     ]
+    },
+    "sanctions": {
+     "display": "Sanctions",
+     "description": "Economic or diplomatic sanctions",
+     "model_description": "One country or bloc of countries formally imposes, discusses, evades, or lifts economic sanctions, export-control restrictions, or asset freezes against another state, entity, or individuals as a legal or diplomatic punitive measure. Not a naval blockade, a military embargo, or ordinary trade friction.",
+     "hypothesis": "This text describes economic sanctions or trade restrictions imposed by one country on another.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a02_4_sanctions_restrictions"
+     ]
+    },
+    "border_conflicts": {
+     "display": "Border Conflicts",
+     "description": "State-on-state border disputes or clashes",
+     "model_description": "Military standoffs, troop buildups, artillery exchanges, skirmishes, or territorial disputes between the armed forces of two or more states along a shared land border or line of control.",
+     "hypothesis": "This text describes a military conflict between the armed forces of two countries at their shared border.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a07_4_border_incidents"
+     ]
+    },
+    "insurgencies": {
+     "display": "Insurgencies",
+     "description": "Non-state-actor armed insurgency",
+     "model_description": "Non-state armed groups such as separatist militants, rebels, or insurgents fighting, attacking, or controlling territory inside a state. Distinct from a war between two national governments or their regular armed forces.",
+     "hypothesis": "This text describes non-state armed rebels or insurgents fighting within a country.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a08_internal_conflict_external_role"
+     ]
+    },
+    "shipping_disruptions": {
+     "display": "Shipping Disruptions",
+     "description": "Maritime trade / shipping-route disruption",
+     "model_description": "A commercial shipping lane, port, or vessel is physically blocked, congested, attacked, seized, or delayed by piracy, vessel strikes, canal or strait closures, or port shutdowns, disrupting the physical flow of maritime trade.",
+     "hypothesis": "This text describes a shipping lane, port, or vessel being disrupted, blocked, or attacked.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a05_3_sloc"
+     ]
+    },
+    "pipeline_vulnerabilities": {
+     "display": "Pipeline Vulnerabilities",
+     "description": "Threats to energy pipeline infrastructure",
+     "model_description": "A specific named oil, gas, or energy pipeline or its supporting infrastructure is threatened, sabotaged, attacked, leaking, or suffers a technical failure.",
+     "hypothesis": "This text describes an oil or gas pipeline being attacked, sabotaged, or damaged.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a04_3_energy_infra_security"
+     ]
+    },
+    "international_pressure": {
+     "display": "International Pressure",
+     "description": "Diplomatic or economic pressure from other states",
+     "model_description": "Multiple foreign governments, the United Nations, or an international coalition jointly criticize, condemn, or issue a formal statement or resolution pressuring a state over its actions. Distinct from one country's own unilateral sanctions or policy.",
+     "hypothesis": "This text describes multiple countries or an international body jointly condemning or pressuring a state.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "b13_threaten"
+     ]
+    }
+   }
+  },
+  "theme": {
+   "label": "Thematic dimension",
+   "kind": "legacy",
+   "hierarchical": false,
+   "status": "in_production",
+   "order": [
+    "political_relations",
+    "economic_relations",
+    "bri",
+    "energy_security",
+    "maritime_security",
+    "maritime_dimensions",
+    "security_military_relations",
+    "border_issues",
+    "internal_conflict_china_role",
+    "tech_digital_influence",
+    "humanitarian_dimension",
+    "international_relations"
+   ],
+   "entries": {
+    "political_relations": {
+     "display": "Political Relations",
+     "description": "Bilateral / multilateral political ties",
+     "model_description": "Diplomatic relations, state visits, bilateral meetings, agreements, or political alignment specifically between China and another country's government.",
+     "hypothesis": "This text describes diplomatic relations between China and another country.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a01_political_diplomatic_relations"
+     ]
+    },
+    "economic_relations": {
+     "display": "Economic Relations",
+     "description": "Trade, investment, economic cooperation",
+     "model_description": "Trade flows, investment deals, loans, or economic cooperation and dependency specifically between China and a partner country, not a country's domestic economy alone.",
+     "hypothesis": "This text describes trade or investment relations between China and another country.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a02_economic_relations"
+     ]
+    },
+    "bri": {
+     "display": "Belt and Road Initiative (BRI)",
+     "description": "China-led infrastructure / investment corridor activity",
+     "model_description": "A Belt and Road Initiative project: a port, railway, road, or infrastructure financed, built, or operated by China in a foreign country outside China. Explicitly not a domestic Chinese infrastructure project built inside China's own borders.",
+     "hypothesis": "This text describes a Belt and Road Initiative infrastructure project that China is building in another country.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a03_infrastructure_connectivity"
+     ]
+    },
+    "energy_security": {
+     "display": "Energy Security",
+     "description": "Energy supply, access and resilience",
+     "model_description": "A country's oil or gas supply routes, energy imports, power-grid projects, or dependency on external energy sources, and the strategic risk this creates.",
+     "hypothesis": "This text describes a country's energy supply routes or energy dependency risk.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a04_energy_security"
+     ]
+    },
+    "maritime_security": {
+     "display": "Maritime Security",
+     "description": "Naval / military activity at sea",
+     "model_description": "Military naval activity at sea: warship patrols, freedom-of-navigation operations, naval exercises, or armed incidents and skirmishes involving military vessels.",
+     "hypothesis": "This text describes military naval activity at sea.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a05_maritime"
+     ]
+    },
+    "maritime_dimensions": {
+     "display": "Maritime Dimensions",
+     "description": "Commercial, non-military maritime activity",
+     "model_description": "Non-military maritime and coastal economic activity: commercial port development, undersea cables, fisheries, or blue-economy projects, without an armed or military angle.",
+     "hypothesis": "This text describes commercial shipping, ports, or ocean economic activity without military conflict.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a05_maritime"
+     ]
+    },
+    "security_military_relations": {
+     "display": "Security & Military Relations",
+     "description": "Defence cooperation, arms deals, joint exercises",
+     "model_description": "Defence cooperation, arms sales, joint military exercises, training, or formal security pacts between two or more states' militaries.",
+     "hypothesis": "This text describes defence cooperation or arms sales between two countries' militaries.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a06_security_military_relations"
+     ]
+    },
+    "border_issues": {
+     "display": "Border Issues",
+     "description": "Territorial and boundary questions",
+     "model_description": "Territorial claims, boundary demarcation disputes, or land-border infrastructure and security issues between neighbouring states, not open combat.",
+     "hypothesis": "This text describes a territorial or land border dispute between two countries.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a07_border_issues"
+     ]
+    },
+    "internal_conflict_china_role": {
+     "display": "Internal Conflict & China’s Role",
+     "description": "Domestic conflict where China’s role is a factor",
+     "model_description": "China is explicitly named as playing a role in, supporting a side of, or influencing another country's internal political crisis or armed conflict.",
+     "hypothesis": "This text describes China's role in another country's internal conflict.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a08_internal_conflict_external_role"
+     ]
+    },
+    "tech_digital_influence": {
+     "display": "Technology & Digital Influence",
+     "description": "Digital infrastructure, tech transfer, cyber influence",
+     "model_description": "Chinese-made technology, telecom equipment, 5G networks, surveillance systems, AI platforms, or digital-influence and propaganda operations exported to or used in another country.",
+     "hypothesis": "This text describes Chinese technology or digital influence being used in another country.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a09_technology_digital"
+     ]
+    },
+    "humanitarian_dimension": {
+     "display": "Humanitarian Dimension",
+     "description": "Refugees, disaster relief, humanitarian crises",
+     "model_description": "Refugee or displaced-persons flows, disaster relief, humanitarian aid delivery, or civilian suffering caused by conflict or a natural disaster.",
+     "hypothesis": "This text describes refugees, disaster relief, or humanitarian suffering.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a10_humanitarian"
+     ]
+    },
+    "international_relations": {
+     "display": "International Relations",
+     "description": "Broader multilateral / global diplomatic activity",
+     "model_description": "Multilateral diplomacy, international organisations such as the UN, G7, or ASEAN, alliances, or global power competition among major powers, not specific to a China-bilateral relationship.",
+     "hypothesis": "This text describes multilateral diplomacy or global power competition.",
+     "code": null,
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": [
+      "a01_political_diplomatic_relations"
+     ]
+    }
+   }
+  },
+  "entity_subtype": {
+   "label": "Entity subtype",
+   "kind": "legacy",
+   "hierarchical": true,
+   "status": "in_production",
+   "order": [
+    "political_leader",
+    "military_leader",
+    "diplomat",
+    "business_executive",
+    "ministry",
+    "state_owned_enterprise",
+    "armed_group",
+    "international_org",
+    "business_org",
+    "port",
+    "border_town",
+    "economic_zone",
+    "pipeline",
+    "railway"
+   ],
+   "groups": {
+    "PERSON": [
+     "political_leader",
+     "military_leader",
+     "diplomat",
+     "business_executive"
+    ],
+    "ORG": [
+     "ministry",
+     "state_owned_enterprise",
+     "armed_group",
+     "international_org",
+     "business_org"
+    ],
+    "LOCATION": [
+     "port",
+     "border_town",
+     "economic_zone",
+     "pipeline",
+     "railway"
+    ]
+   },
+   "entries": {
+    "political_leader": {
+     "display": "Political Leader",
+     "description": "PERSON",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "PERSON",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "military_leader": {
+     "display": "Military Leader",
+     "description": "PERSON",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "PERSON",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "diplomat": {
+     "display": "Diplomat",
+     "description": "PERSON",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "PERSON",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "business_executive": {
+     "display": "Business Executive",
+     "description": "PERSON",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "PERSON",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "ministry": {
+     "display": "Ministry",
+     "description": "ORG",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "ORG",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "state_owned_enterprise": {
+     "display": "State-Owned Enterprise",
+     "description": "ORG",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "ORG",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "armed_group": {
+     "display": "Armed Group",
+     "description": "ORG",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "ORG",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "international_org": {
+     "display": "International Organization",
+     "description": "ORG",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "ORG",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "business_org": {
+     "display": "Business / Corporate Org",
+     "description": "ORG",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "ORG",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "port": {
+     "display": "Port",
+     "description": "LOCATION",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "LOCATION",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "border_town": {
+     "display": "Border Town",
+     "description": "LOCATION",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "LOCATION",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "economic_zone": {
+     "display": "Economic Zone",
+     "description": "LOCATION",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "LOCATION",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "pipeline": {
+     "display": "Pipeline",
+     "description": "LOCATION",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "LOCATION",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "railway": {
+     "display": "Railway",
+     "description": "LOCATION",
+     "model_description": null,
+     "hypothesis": null,
+     "code": null,
+     "parent_key": "LOCATION",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    }
+   }
+  },
+  "theme_code": {
+   "label": "Event topic (Section A, parent)",
+   "kind": "cameo",
+   "hierarchical": false,
+   "status": "declared_not_yet_populated",
+   "order": [
+    "a01_political_diplomatic_relations",
+    "a02_economic_relations",
+    "a03_infrastructure_connectivity",
+    "a04_energy_security",
+    "a05_maritime",
+    "a06_security_military_relations",
+    "a07_border_issues",
+    "a08_internal_conflict_external_role",
+    "a09_technology_digital",
+    "a10_humanitarian"
+   ],
+   "entries": {
+    "a01_political_diplomatic_relations": {
+     "display": "Political & Diplomatic Relations",
+     "description": "Government-to-government interaction: official visits, summits, bilateral or multilateral political dialogue, diplomatic statements, and political treaties between states. Diplomacy and political relations as such -- not trade terms, not military operations, not border incidents.",
+     "model_description": "Government-to-government interaction: official visits, summits, bilateral or multilateral political dialogue, diplomatic statements, and political treaties between states. Diplomacy and political relations as such -- not trade terms, not military operations, not border incidents.",
+     "hypothesis": "This text describes diplomatic or political relations between governments.",
+     "code": "01",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "political_relations",
+      "international_relations"
+     ],
+     "crosswalk_to": []
+    },
+    "a02_economic_relations": {
+     "display": "Economic Relations",
+     "description": "Trade, investment, and financial-policy interaction between states: tariffs, trade disputes, FDI, currency and debt arrangements, and economic sanctions. Excludes activity tied to a named connectivity initiative (code 03) and energy trade (code 04).",
+     "model_description": "Trade, investment, and financial-policy interaction between states: tariffs, trade disputes, FDI, currency and debt arrangements, and economic sanctions. Excludes activity tied to a named connectivity initiative (code 03) and energy trade (code 04).",
+     "hypothesis": "This text describes trade, investment, or financial relations between countries.",
+     "code": "02",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "economic_relations"
+     ],
+     "crosswalk_to": []
+    },
+    "a03_infrastructure_connectivity": {
+     "display": "Strategic Infrastructure & Connectivity Initiatives",
+     "description": "Cross-border infrastructure, connectivity, and development-financing initiatives sponsored by any state, bloc, or multilateral body -- ports, railways, corridors, and the debt and diplomacy attached to them. Actor-neutral: applies to any sponsoring state, not one named programme.",
+     "model_description": "Cross-border infrastructure, connectivity, and development-financing initiatives sponsored by any state, bloc, or multilateral body -- ports, railways, corridors, and the debt and diplomacy attached to them. Actor-neutral: applies to any sponsoring state, not one named programme.",
+     "hypothesis": "This text describes a cross-border infrastructure or connectivity initiative.",
+     "code": "03",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "bri"
+     ],
+     "crosswalk_to": []
+    },
+    "a04_energy_security": {
+     "display": "Energy Security",
+     "description": "Energy interests, energy infrastructure, resource access, and energy diplomacy, including effects on partner and rival states. Energy as the subject -- pipelines, LNG, nuclear cooperation, chokepoint dependency.",
+     "model_description": "Energy interests, energy infrastructure, resource access, and energy diplomacy, including effects on partner and rival states. Energy as the subject -- pipelines, LNG, nuclear cooperation, chokepoint dependency.",
+     "hypothesis": "This text describes energy supply, energy infrastructure, or energy security.",
+     "code": "04",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "energy_security"
+     ],
+     "crosswalk_to": []
+    },
+    "a05_maritime": {
+     "display": "Maritime Security & Dimensions",
+     "description": "Maritime activity in both its military/strategic and its broader maritime-affairs sense: naval operations and deployments, sea disputes, shipping lanes and chokepoints, port access, and fishing/EEZ governance.",
+     "model_description": "Maritime activity in both its military/strategic and its broader maritime-affairs sense: naval operations and deployments, sea disputes, shipping lanes and chokepoints, port access, and fishing/EEZ governance.",
+     "hypothesis": "This text describes naval activity, a maritime dispute, or shipping and sea lanes.",
+     "code": "05",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "maritime_security",
+      "maritime_dimensions"
+     ],
+     "crosswalk_to": []
+    },
+    "a06_security_military_relations": {
+     "display": "Security & Military Relations",
+     "description": "Defence relations BETWEEN states: joint exercises, arms transfers, force modernisation, and alliance formation. Cooperative and capability-building military activity -- not the conduct of hostilities, which is coded on the Section B escalation axis.",
+     "model_description": "Defence relations BETWEEN states: joint exercises, arms transfers, force modernisation, and alliance formation. Cooperative and capability-building military activity -- not the conduct of hostilities, which is coded on the Section B escalation axis.",
+     "hypothesis": "This text describes defence cooperation, arms transfers, or military capability development.",
+     "code": "06",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "security_military_relations"
+     ],
+     "crosswalk_to": []
+    },
+    "a07_border_issues": {
+     "display": "Border Issues",
+     "description": "Land-border developments between neighbouring states: disputed sectors, border infrastructure, confidence-building talks, and border incidents. Land borders specifically -- maritime boundaries are code 05.",
+     "model_description": "Land-border developments between neighbouring states: disputed sectors, border infrastructure, confidence-building talks, and border incidents. Land borders specifically -- maritime boundaries are code 05.",
+     "hypothesis": "This text describes a land border between countries.",
+     "code": "07",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "border_issues"
+     ],
+     "crosswalk_to": []
+    },
+    "a08_internal_conflict_external_role": {
+     "display": "Internal Conflict & External Actor Role",
+     "description": "Internal conflict, insurgency, or political instability within a state, and the role played by any external state or non-state actor -- mediation, support, or influence -- plus a state's own external messaging about its internal stability. Actor-neutral: no specific country is privileged.",
+     "model_description": "Internal conflict, insurgency, or political instability within a state, and the role played by any external state or non-state actor -- mediation, support, or influence -- plus a state's own external messaging about its internal stability. Actor-neutral: no specific country is privileged.",
+     "hypothesis": "This text describes internal conflict or instability within a country.",
+     "code": "08",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "internal_conflict_china_role",
+      "insurgencies"
+     ],
+     "crosswalk_to": []
+    },
+    "a09_technology_digital": {
+     "display": "Technology & Digital Influence",
+     "description": "Technology exports, digital-infrastructure projects, cyber activity, and influence exerted through technological means: 5G and telecom, undersea cables, surveillance technology, cyber operations, and export controls on strategic technology.",
+     "model_description": "Technology exports, digital-infrastructure projects, cyber activity, and influence exerted through technological means: 5G and telecom, undersea cables, surveillance technology, cyber operations, and export controls on strategic technology.",
+     "hypothesis": "This text describes technology, digital infrastructure, or cyber activity between countries.",
+     "code": "09",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "tech_digital_influence"
+     ],
+     "crosswalk_to": []
+    },
+    "a10_humanitarian": {
+     "display": "Humanitarian Dimension",
+     "description": "Humanitarian assistance, disaster relief, public-health diplomacy, and related soft-power activity by any state or organisation.",
+     "model_description": "Humanitarian assistance, disaster relief, public-health diplomacy, and related soft-power activity by any state or organisation.",
+     "hypothesis": "This text describes humanitarian aid, disaster relief, or medical assistance.",
+     "code": "10",
+     "parent_key": null,
+     "level": 1,
+     "alertable": false,
+     "alertable_reason": "Measured population rate 0.16% (~34 posts / 46 days, ~0.7/day) from the 872-pair judged sample, on only 4 judged positives after targeted oversampling. Too sparse to clear the baseline_mean >= 0.5/day support gate reliably; coded for the record but not trend-alerted.",
+     "crosswalk_from": [
+      "humanitarian_dimension"
+     ],
+     "crosswalk_to": []
+    }
+   }
+  },
+  "theme_subcode": {
+   "label": "Event topic (Section A, sub-code)",
+   "kind": "cameo",
+   "hierarchical": true,
+   "status": "declared_not_yet_populated",
+   "order": [
+    "a01_1_bilateral_political",
+    "a01_2_multilateral",
+    "a01_3_diplomatic_statements",
+    "a01_4_treaties_agreements",
+    "a02_1_trade",
+    "a02_2_investment_fdi",
+    "a02_3_financial_monetary",
+    "a02_4_sanctions_restrictions",
+    "a03_1_infrastructure_projects",
+    "a03_2_project_financing_debt",
+    "a03_3_named_corridors",
+    "a03_4_initiative_status",
+    "a04_1_oil_gas_access",
+    "a04_2_nuclear_renewable",
+    "a04_3_energy_infra_security",
+    "a04_4_energy_competition",
+    "a05_1_naval_presence",
+    "a05_2_maritime_disputes",
+    "a05_3_sloc",
+    "a05_4_port_access_dual_use",
+    "a05_5_maritime_law",
+    "a06_1_mil_to_mil",
+    "a06_2_arms_sales",
+    "a06_3_modernization",
+    "a06_4_alliances",
+    "a07_1_border_disputes",
+    "a07_2_border_infrastructure",
+    "a07_3_border_talks_cbm",
+    "a07_4_border_incidents",
+    "a08_1_mediation",
+    "a08_2_external_support",
+    "a08_3_domestic_stability_narratives",
+    "a08_4_spillover_refugees",
+    "a09_1_digital_infrastructure",
+    "a09_2_surveillance_tech",
+    "a09_3_cyber_activity",
+    "a09_4_tech_standards_controls",
+    "a10_1_disaster_relief",
+    "a10_2_health_diplomacy",
+    "a10_3_conflict_zone_aid",
+    "a10_4_refugee_migration_aid"
+   ],
+   "entries": {
+    "a01_1_bilateral_political": {
+     "display": "Bilateral Political Relations",
+     "description": "Official state visits, bilateral summits, and political talks between two named governments.",
+     "model_description": "Official state visits, bilateral summits, and political talks between two named governments.",
+     "hypothesis": "This text describes a bilateral meeting or state visit between two governments.",
+     "code": "01.1",
+     "parent_key": "a01_political_diplomatic_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a01_2_multilateral": {
+     "display": "Multilateral & International Relations",
+     "description": "Engagement in multilateral bodies and regional groupings: UN votes, regional-bloc summits, joint communiques of groupings.",
+     "model_description": "Engagement in multilateral bodies and regional groupings: UN votes, regional-bloc summits, joint communiques of groupings.",
+     "hypothesis": "This text describes multilateral diplomacy in an international organisation or regional bloc.",
+     "code": "01.2",
+     "parent_key": "a01_political_diplomatic_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a01_3_diplomatic_statements": {
+     "display": "Diplomatic Statements & Positioning",
+     "description": "Official statements, foreign-ministry briefings, ambassadorial remarks, and diplomatic signalling on political issues.",
+     "model_description": "Official statements, foreign-ministry briefings, ambassadorial remarks, and diplomatic signalling on political issues.",
+     "hypothesis": "This text reports an official government or foreign-ministry statement.",
+     "code": "01.3",
+     "parent_key": "a01_political_diplomatic_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a01_4_treaties_agreements": {
+     "display": "Treaties & Agreements",
+     "description": "Signing, ratification, suspension, or withdrawal from political and strategic agreements, treaties, and memoranda of understanding.",
+     "model_description": "Signing, ratification, suspension, or withdrawal from political and strategic agreements, treaties, and memoranda of understanding.",
+     "hypothesis": "This text describes a treaty, pact, or memorandum being signed, ratified, or suspended.",
+     "code": "01.4",
+     "parent_key": "a01_political_diplomatic_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "policy_shifts"
+     ],
+     "crosswalk_to": []
+    },
+    "a02_1_trade": {
+     "display": "Trade Relations",
+     "description": "Imports and exports, tariffs, trade deficits, trade disputes, and free-trade agreements between states.",
+     "model_description": "Imports and exports, tariffs, trade deficits, trade disputes, and free-trade agreements between states.",
+     "hypothesis": "This text describes trade flows, tariffs, or a trade agreement between countries.",
+     "code": "02.1",
+     "parent_key": "a02_economic_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a02_2_investment_fdi": {
+     "display": "Investment & FDI",
+     "description": "Inbound or outbound foreign direct investment, cross-border acquisitions, investment screening, and special economic zones.",
+     "model_description": "Inbound or outbound foreign direct investment, cross-border acquisitions, investment screening, and special economic zones.",
+     "hypothesis": "This text describes foreign investment or a cross-border acquisition.",
+     "code": "02.2",
+     "parent_key": "a02_economic_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a02_3_financial_monetary": {
+     "display": "Financial & Monetary Cooperation",
+     "description": "Currency swap lines, sovereign loans, debt restructuring, and central-bank cooperation between states.",
+     "model_description": "Currency swap lines, sovereign loans, debt restructuring, and central-bank cooperation between states.",
+     "hypothesis": "This text describes a loan, currency swap, or debt arrangement between countries.",
+     "code": "02.3",
+     "parent_key": "a02_economic_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a02_4_sanctions_restrictions": {
+     "display": "Economic Sanctions & Restrictions",
+     "description": "Economic coercion between states: sanctions, embargoes, import bans, and export restrictions. The economic measure itself, as subject matter.",
+     "model_description": "Economic coercion between states: sanctions, embargoes, import bans, and export restrictions. The economic measure itself, as subject matter.",
+     "hypothesis": "This text describes economic sanctions or trade restrictions imposed by one country on another.",
+     "code": "02.4",
+     "parent_key": "a02_economic_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "sanctions"
+     ],
+     "crosswalk_to": []
+    },
+    "a03_1_infrastructure_projects": {
+     "display": "Infrastructure Projects",
+     "description": "Ports, railways, roads, and special economic zones built under a connectivity or development initiative.",
+     "model_description": "Ports, railways, roads, and special economic zones built under a connectivity or development initiative.",
+     "hypothesis": "This text describes construction of a port, railway, road, or economic zone.",
+     "code": "03.1",
+     "parent_key": "a03_infrastructure_connectivity",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a03_2_project_financing_debt": {
+     "display": "Project Financing & Debt",
+     "description": "Loans, debt-sustainability concerns, defaults, and restructuring tied to initiative-linked infrastructure.",
+     "model_description": "Loans, debt-sustainability concerns, defaults, and restructuring tied to initiative-linked infrastructure.",
+     "hypothesis": "This text describes project debt, a loan, or debt sustainability for an infrastructure project.",
+     "code": "03.2",
+     "parent_key": "a03_infrastructure_connectivity",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a03_3_named_corridors": {
+     "display": "Named Corridors & Programs",
+     "description": "A specifically named economic corridor, connectivity programme, or initiative brand referenced in reporting.",
+     "model_description": "A specifically named economic corridor, connectivity programme, or initiative brand referenced in reporting.",
+     "hypothesis": "This text names a specific economic corridor or connectivity programme.",
+     "code": "03.3",
+     "parent_key": "a03_infrastructure_connectivity",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a03_4_initiative_status": {
+     "display": "Initiative Diplomacy & Project Status",
+     "description": "Initiative summits, new project agreements, and project delays, cancellations, or withdrawals.",
+     "model_description": "Initiative summits, new project agreements, and project delays, cancellations, or withdrawals.",
+     "hypothesis": "This text describes an infrastructure project being delayed, cancelled, or newly agreed.",
+     "code": "03.4",
+     "parent_key": "a03_infrastructure_connectivity",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "project_delays"
+     ],
+     "crosswalk_to": []
+    },
+    "a04_1_oil_gas_access": {
+     "display": "Oil & Gas Access",
+     "description": "Pipelines, oil and gas supply deals, LNG contracts, and import-route dependency.",
+     "model_description": "Pipelines, oil and gas supply deals, LNG contracts, and import-route dependency.",
+     "hypothesis": "This text describes oil or gas supply, a pipeline, or an LNG deal.",
+     "code": "04.1",
+     "parent_key": "a04_energy_security",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a04_2_nuclear_renewable": {
+     "display": "Nuclear & Renewable Energy Cooperation",
+     "description": "Nuclear power plant construction or agreements, and export of renewable-energy technology.",
+     "model_description": "Nuclear power plant construction or agreements, and export of renewable-energy technology.",
+     "hypothesis": "This text describes nuclear power or renewable energy cooperation between countries.",
+     "code": "04.2",
+     "parent_key": "a04_energy_security",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a04_3_energy_infra_security": {
+     "display": "Energy Infrastructure Security",
+     "description": "Protection of, or threat to, pipelines, energy ports, refineries, and energy corridors.",
+     "model_description": "Protection of, or threat to, pipelines, energy ports, refineries, and energy corridors.",
+     "hypothesis": "This text describes a threat to, or the protection of, energy infrastructure such as a pipeline.",
+     "code": "04.3",
+     "parent_key": "a04_energy_security",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "pipeline_vulnerabilities"
+     ],
+     "crosswalk_to": []
+    },
+    "a04_4_energy_competition": {
+     "display": "Energy-related Strategic Competition",
+     "description": "Strategic competition over energy routes, resources, and maritime or overland chokepoints.",
+     "model_description": "Strategic competition over energy routes, resources, and maritime or overland chokepoints.",
+     "hypothesis": "This text describes strategic competition over energy routes or resources.",
+     "code": "04.4",
+     "parent_key": "a04_energy_security",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a05_1_naval_presence": {
+     "display": "Naval Presence & Deployments",
+     "description": "Naval deployments, port calls, patrols, and carrier or fleet movements by any state's navy.",
+     "model_description": "Naval deployments, port calls, patrols, and carrier or fleet movements by any state's navy.",
+     "hypothesis": "This text describes a naval deployment, patrol, or warship movement.",
+     "code": "05.1",
+     "parent_key": "a05_maritime",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a05_2_maritime_disputes": {
+     "display": "Territorial & Maritime Disputes",
+     "description": "Contested waters, disputed islands and reefs, and exclusive economic zone incursions between states.",
+     "model_description": "Contested waters, disputed islands and reefs, and exclusive economic zone incursions between states.",
+     "hypothesis": "This text describes a dispute over contested waters, islands, or an exclusive economic zone.",
+     "code": "05.2",
+     "parent_key": "a05_maritime",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a05_3_sloc": {
+     "display": "Sea Lines of Communication (SLOC)",
+     "description": "Strategic shipping routes, straits and chokepoints, and the security or disruption of commercial shipping.",
+     "model_description": "Strategic shipping routes, straits and chokepoints, and the security or disruption of commercial shipping.",
+     "hypothesis": "This text describes a strategic shipping route, strait, or chokepoint.",
+     "code": "05.3",
+     "parent_key": "a05_maritime",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "shipping_disruptions"
+     ],
+     "crosswalk_to": []
+    },
+    "a05_4_port_access_dual_use": {
+     "display": "Port Access & Dual-use Infrastructure",
+     "description": "Overseas port leases, logistics facilities, and infrastructure with potential dual military-civilian use.",
+     "model_description": "Overseas port leases, logistics facilities, and infrastructure with potential dual military-civilian use.",
+     "hypothesis": "This text describes an overseas port lease or a dual-use logistics facility.",
+     "code": "05.4",
+     "parent_key": "a05_maritime",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a05_5_maritime_law": {
+     "display": "Maritime Law & Governance",
+     "description": "UNCLOS rulings and arbitration, fishing rights disputes, and blue-economy governance.",
+     "model_description": "UNCLOS rulings and arbitration, fishing rights disputes, and blue-economy governance.",
+     "hypothesis": "This text describes maritime law, an UNCLOS ruling, or fishing rights.",
+     "code": "05.5",
+     "parent_key": "a05_maritime",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a06_1_mil_to_mil": {
+     "display": "Military-to-Military Engagement",
+     "description": "Joint military exercises, defence dialogues, staff talks, and officer exchanges between states.",
+     "model_description": "Joint military exercises, defence dialogues, staff talks, and officer exchanges between states.",
+     "hypothesis": "This text describes a joint military exercise or defence dialogue between countries.",
+     "code": "06.1",
+     "parent_key": "a06_security_military_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a06_2_arms_sales": {
+     "display": "Arms Sales & Defense Trade",
+     "description": "Weapons transfers, defence procurement contracts, and military equipment sales between states.",
+     "model_description": "Weapons transfers, defence procurement contracts, and military equipment sales between states.",
+     "hypothesis": "This text describes an arms sale or defence equipment deal.",
+     "code": "06.2",
+     "parent_key": "a06_security_military_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a06_3_modernization": {
+     "display": "Military Modernization & Capability Development",
+     "description": "A state's force modernisation, new weapons systems, and defence capability build-up.",
+     "model_description": "A state's force modernisation, new weapons systems, and defence capability build-up.",
+     "hypothesis": "This text describes military modernisation or a new weapons capability.",
+     "code": "06.3",
+     "parent_key": "a06_security_military_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a06_4_alliances": {
+     "display": "Alliance & Security Partnerships",
+     "description": "Formal or informal security alignments, defence pacts, and security partnerships between states.",
+     "model_description": "Formal or informal security alignments, defence pacts, and security partnerships between states.",
+     "hypothesis": "This text describes a security alliance, defence pact, or military partnership.",
+     "code": "06.4",
+     "parent_key": "a06_security_military_relations",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a07_1_border_disputes": {
+     "display": "Territorial / Border Disputes",
+     "description": "Disputed border sectors, competing territorial claims, and standoffs along a contested land border.",
+     "model_description": "Disputed border sectors, competing territorial claims, and standoffs along a contested land border.",
+     "hypothesis": "This text describes a disputed land border or territorial claim.",
+     "code": "07.1",
+     "parent_key": "a07_border_issues",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a07_2_border_infrastructure": {
+     "display": "Border Infrastructure",
+     "description": "Road, rail, and settlement construction near a border, including dual-use border villages.",
+     "model_description": "Road, rail, and settlement construction near a border, including dual-use border villages.",
+     "hypothesis": "This text describes construction of roads, rail, or settlements near a border.",
+     "code": "07.2",
+     "parent_key": "a07_border_issues",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a07_3_border_talks_cbm": {
+     "display": "Border Talks & CBMs",
+     "description": "Special-representative talks, hotline mechanisms, disengagement and de-escalation agreements on a border.",
+     "model_description": "Special-representative talks, hotline mechanisms, disengagement and de-escalation agreements on a border.",
+     "hypothesis": "This text describes border talks, a disengagement agreement, or a confidence-building measure.",
+     "code": "07.3",
+     "parent_key": "a07_border_issues",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a07_4_border_incidents": {
+     "display": "Border Incidents",
+     "description": "Skirmishes, incursions, patrol face-offs, and firing incidents at a land border.",
+     "model_description": "Skirmishes, incursions, patrol face-offs, and firing incidents at a land border.",
+     "hypothesis": "This text describes a skirmish, incursion, or face-off at a border.",
+     "code": "07.4",
+     "parent_key": "a07_border_issues",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "border_conflicts"
+     ],
+     "crosswalk_to": []
+    },
+    "a08_1_mediation": {
+     "display": "Mediation & Conflict Resolution",
+     "description": "An outside state or organisation acting as mediator, broker, or facilitator in another country's conflict.",
+     "model_description": "An outside state or organisation acting as mediator, broker, or facilitator in another country's conflict.",
+     "hypothesis": "This text describes an outside country mediating or brokering talks in another country's conflict.",
+     "code": "08.1",
+     "parent_key": "a08_internal_conflict_external_role",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a08_2_external_support": {
+     "display": "External Support to State / Non-state Actors",
+     "description": "Reported or alleged external backing of a government or of armed factions in a conflict zone.",
+     "model_description": "Reported or alleged external backing of a government or of armed factions in a conflict zone.",
+     "hypothesis": "This text describes an outside country backing a government or armed group in a conflict.",
+     "code": "08.2",
+     "parent_key": "a08_internal_conflict_external_role",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a08_3_domestic_stability_narratives": {
+     "display": "Domestic Stability Narratives",
+     "description": "A government's external messaging about its own internal unrest, and international reaction to it.",
+     "model_description": "A government's external messaging about its own internal unrest, and international reaction to it.",
+     "hypothesis": "This text describes political unrest or instability inside one country.",
+     "code": "08.3",
+     "parent_key": "a08_internal_conflict_external_role",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "domestic_instability"
+     ],
+     "crosswalk_to": []
+    },
+    "a08_4_spillover_refugees": {
+     "display": "Refugee & Cross-border Spillover",
+     "description": "Conflict spilling across a border, displacement, and refugee flows affecting neighbouring states.",
+     "model_description": "Conflict spilling across a border, displacement, and refugee flows affecting neighbouring states.",
+     "hypothesis": "This text describes refugees or conflict spilling across a border into a neighbouring country.",
+     "code": "08.4",
+     "parent_key": "a08_internal_conflict_external_role",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a09_1_digital_infrastructure": {
+     "display": "Digital Infrastructure & Connectivity",
+     "description": "5G rollout, telecom network contracts, undersea cables, and data-centre projects across borders.",
+     "model_description": "5G rollout, telecom network contracts, undersea cables, and data-centre projects across borders.",
+     "hypothesis": "This text describes telecom networks, 5G, undersea cables, or data centres.",
+     "code": "09.1",
+     "parent_key": "a09_technology_digital",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a09_2_surveillance_tech": {
+     "display": "Surveillance & Security Tech Exports",
+     "description": "Export or transfer of surveillance systems, facial recognition, and policing technology.",
+     "model_description": "Export or transfer of surveillance systems, facial recognition, and policing technology.",
+     "hypothesis": "This text describes export or transfer of surveillance or facial-recognition technology.",
+     "code": "09.2",
+     "parent_key": "a09_technology_digital",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a09_3_cyber_activity": {
+     "display": "Cyber Activity",
+     "description": "Cyberattacks, cyber espionage, attribution of intrusions, and cybersecurity cooperation or dispute.",
+     "model_description": "Cyberattacks, cyber espionage, attribution of intrusions, and cybersecurity cooperation or dispute.",
+     "hypothesis": "This text describes a cyberattack, cyber espionage, or cybersecurity.",
+     "code": "09.3",
+     "parent_key": "a09_technology_digital",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a09_4_tech_standards_controls": {
+     "display": "Tech Standards & Export Controls",
+     "description": "Semiconductor and technology export controls, technology-transfer restrictions, and standard-setting disputes.",
+     "model_description": "Semiconductor and technology export controls, technology-transfer restrictions, and standard-setting disputes.",
+     "hypothesis": "This text describes technology export controls or semiconductor restrictions.",
+     "code": "09.4",
+     "parent_key": "a09_technology_digital",
+     "level": 2,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a10_1_disaster_relief": {
+     "display": "Disaster Relief & Emergency Aid",
+     "description": "Earthquake, flood, cyclone, or other emergency relief assistance sent across borders.",
+     "model_description": "Earthquake, flood, cyclone, or other emergency relief assistance sent across borders.",
+     "hypothesis": "This text describes disaster relief or emergency aid after a natural disaster.",
+     "code": "10.1",
+     "parent_key": "a10_humanitarian",
+     "level": 2,
+     "alertable": false,
+     "alertable_reason": "inherited from parent 10: Measured population rate 0.16% (~34 posts / 46 days, ~0.7/day) from the 872-pair judged sample, on only 4 judged positives after targeted oversampling. Too sparse to clear the baseline_mean >= 0.5/day support gate reliably; coded for the record but not trend-alerted.",
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a10_2_health_diplomacy": {
+     "display": "Health & Medical Diplomacy",
+     "description": "Vaccine donations, medical team deployments, and hospital construction as international assistance.",
+     "model_description": "Vaccine donations, medical team deployments, and hospital construction as international assistance.",
+     "hypothesis": "This text describes medical assistance, vaccine donation, or health diplomacy.",
+     "code": "10.2",
+     "parent_key": "a10_humanitarian",
+     "level": 2,
+     "alertable": false,
+     "alertable_reason": "inherited from parent 10: Measured population rate 0.16% (~34 posts / 46 days, ~0.7/day) from the 872-pair judged sample, on only 4 judged positives after targeted oversampling. Too sparse to clear the baseline_mean >= 0.5/day support gate reliably; coded for the record but not trend-alerted.",
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a10_3_conflict_zone_aid": {
+     "display": "Humanitarian Assistance in Conflict Zones",
+     "description": "Aid convoys and relief delivery into an active conflict or siege setting.",
+     "model_description": "Aid convoys and relief delivery into an active conflict or siege setting.",
+     "hypothesis": "This text describes humanitarian aid being delivered into a conflict zone.",
+     "code": "10.3",
+     "parent_key": "a10_humanitarian",
+     "level": 2,
+     "alertable": false,
+     "alertable_reason": "inherited from parent 10: Measured population rate 0.16% (~34 posts / 46 days, ~0.7/day) from the 872-pair judged sample, on only 4 judged positives after targeted oversampling. Too sparse to clear the baseline_mean >= 0.5/day support gate reliably; coded for the record but not trend-alerted.",
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "a10_4_refugee_migration_aid": {
+     "display": "Refugee & Migration-related Assistance",
+     "description": "Assistance programmes directed at refugee populations or migration situations.",
+     "model_description": "Assistance programmes directed at refugee populations or migration situations.",
+     "hypothesis": "This text describes assistance for refugees or migrants.",
+     "code": "10.4",
+     "parent_key": "a10_humanitarian",
+     "level": 2,
+     "alertable": false,
+     "alertable_reason": "inherited from parent 10: Measured population rate 0.16% (~34 posts / 46 days, ~0.7/day) from the 872-pair judged sample, on only 4 judged positives after targeted oversampling. Too sparse to clear the baseline_mean >= 0.5/day support gate reliably; coded for the record but not trend-alerted.",
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    }
+   },
+   "groups": {
+    "a01_political_diplomatic_relations": [
+     "a01_1_bilateral_political",
+     "a01_2_multilateral",
+     "a01_3_diplomatic_statements",
+     "a01_4_treaties_agreements"
+    ],
+    "a02_economic_relations": [
+     "a02_1_trade",
+     "a02_2_investment_fdi",
+     "a02_3_financial_monetary",
+     "a02_4_sanctions_restrictions"
+    ],
+    "a03_infrastructure_connectivity": [
+     "a03_1_infrastructure_projects",
+     "a03_2_project_financing_debt",
+     "a03_3_named_corridors",
+     "a03_4_initiative_status"
+    ],
+    "a04_energy_security": [
+     "a04_1_oil_gas_access",
+     "a04_2_nuclear_renewable",
+     "a04_3_energy_infra_security",
+     "a04_4_energy_competition"
+    ],
+    "a05_maritime": [
+     "a05_1_naval_presence",
+     "a05_2_maritime_disputes",
+     "a05_3_sloc",
+     "a05_4_port_access_dual_use",
+     "a05_5_maritime_law"
+    ],
+    "a06_security_military_relations": [
+     "a06_1_mil_to_mil",
+     "a06_2_arms_sales",
+     "a06_3_modernization",
+     "a06_4_alliances"
+    ],
+    "a07_border_issues": [
+     "a07_1_border_disputes",
+     "a07_2_border_infrastructure",
+     "a07_3_border_talks_cbm",
+     "a07_4_border_incidents"
+    ],
+    "a08_internal_conflict_external_role": [
+     "a08_1_mediation",
+     "a08_2_external_support",
+     "a08_3_domestic_stability_narratives",
+     "a08_4_spillover_refugees"
+    ],
+    "a09_technology_digital": [
+     "a09_1_digital_infrastructure",
+     "a09_2_surveillance_tech",
+     "a09_3_cyber_activity",
+     "a09_4_tech_standards_controls"
+    ],
+    "a10_humanitarian": [
+     "a10_1_disaster_relief",
+     "a10_2_health_diplomacy",
+     "a10_3_conflict_zone_aid",
+     "a10_4_refugee_migration_aid"
+    ]
+   }
+  },
+  "action": {
+   "label": "Event action (Section B)",
+   "kind": "cameo",
+   "hierarchical": false,
+   "status": "declared_not_yet_populated",
+   "order": [
+    "b13_threaten",
+    "b14_protest",
+    "b15_force_posture",
+    "b16_reduce_relations",
+    "b17_coerce",
+    "b18_assault",
+    "b19_fight",
+    "b20_mass_violence"
+   ],
+   "entries": {
+    "b13_threaten": {
+     "display": "Threaten",
+     "description": "Threats to attack, coerce, boycott, sanction, or halt negotiations or aid unless demands are met -- including threats of force, non-force threats, and unspecified threats. The threat, not its execution.",
+     "model_description": "Threats to attack, coerce, boycott, sanction, or halt negotiations or aid unless demands are met -- including threats of force, non-force threats, and unspecified threats. The threat, not its execution.",
+     "hypothesis": "This text describes one party threatening another.",
+     "code": "13",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [
+      "international_pressure"
+     ],
+     "crosswalk_to": []
+    },
+    "b14_protest": {
+     "display": "Protest",
+     "description": "Public demonstrations of dissatisfaction: demonstrations, rallies, hunger strikes, strikes and boycotts, obstruction of passage, and protests that turn violent.",
+     "model_description": "Public demonstrations of dissatisfaction: demonstrations, rallies, hunger strikes, strikes and boycotts, obstruction of passage, and protests that turn violent.",
+     "hypothesis": "This text describes a protest, demonstration, or strike.",
+     "code": "14",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "b15_force_posture": {
+     "display": "Exhibit Force Posture",
+     "description": "Military posturing short of engagement: alerts and readiness changes, mobilisation or reinforcement of police or military power, and military, naval, or air deployments and manoeuvres. Signalling capability without using it.",
+     "model_description": "Military posturing short of engagement: alerts and readiness changes, mobilisation or reinforcement of police or military power, and military, naval, or air deployments and manoeuvres. Signalling capability without using it.",
+     "hypothesis": "This text describes a military mobilisation, alert, or show of force.",
+     "code": "15",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "b16_reduce_relations": {
+     "display": "Reduce Relations",
+     "description": "Actions reducing the normal level of international interaction: breaking or downgrading diplomatic relations, halting aid, imposing embargoes or boycotts, ending negotiations, and expelling or withdrawing personnel.",
+     "model_description": "Actions reducing the normal level of international interaction: breaking or downgrading diplomatic relations, halting aid, imposing embargoes or boycotts, ending negotiations, and expelling or withdrawing personnel.",
+     "hypothesis": "This text describes one country cutting ties, expelling diplomats, or halting cooperation.",
+     "code": "16",
+     "parent_key": null,
+     "level": 1,
+     "alertable": false,
+     "alertable_reason": "Measured English-cue floor 1.2% of usable-text posts (~245 posts, ~5/day). Marginal against the baseline_mean >= 0.5/day support gate; coded for the record but excluded from daily alerting to avoid a mostly-empty panel.",
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "b17_coerce": {
+     "display": "Coerce",
+     "description": "Actions to pressure or force a change in behaviour: seizing or damaging property, administrative sanctions, arrests, detentions and expulsions of individuals, and violation of territory.",
+     "model_description": "Actions to pressure or force a change in behaviour: seizing or damaging property, administrative sanctions, arrests, detentions and expulsions of individuals, and violation of territory.",
+     "hypothesis": "This text describes arrests, detentions, seizures, or a blockade.",
+     "code": "17",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "b18_assault": {
+     "display": "Assault",
+     "description": "Physical acts of violence, sabotage, or hijacking, and lethal or non-lethal attacks that do not amount to sustained fighting. Discrete attacks rather than continuous combat.",
+     "model_description": "Physical acts of violence, sabotage, or hijacking, and lethal or non-lethal attacks that do not amount to sustained fighting. Discrete attacks rather than continuous combat.",
+     "hypothesis": "This text describes an attack, bombing, or act of sabotage.",
+     "code": "18",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "b19_fight": {
+     "display": "Fight",
+     "description": "Open, extensive, continuous militarised conflict: conventional military force, blockades, occupation of territory, engagements with small or heavy weapons, violent repression, and cyberwarfare. Sustained combat rather than a single attack.",
+     "model_description": "Open, extensive, continuous militarised conflict: conventional military force, blockades, occupation of territory, engagements with small or heavy weapons, violent repression, and cyberwarfare. Sustained combat rather than a single attack.",
+     "hypothesis": "This text describes sustained armed fighting, shelling, or military occupation.",
+     "code": "19",
+     "parent_key": null,
+     "level": 1,
+     "alertable": true,
+     "alertable_reason": null,
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    },
+    "b20_mass_violence": {
+     "display": "Engage in Unconventional Mass Violence",
+     "description": "Use of weapons of mass destruction, and mass expulsion, mass killing, ethnic cleansing, or genocide.",
+     "model_description": "Use of weapons of mass destruction, and mass expulsion, mass killing, ethnic cleansing, or genocide.",
+     "hypothesis": "This text describes mass killing, ethnic cleansing, genocide, or use of weapons of mass destruction.",
+     "code": "20",
+     "parent_key": null,
+     "level": 1,
+     "alertable": false,
+     "alertable_reason": "Measured English-cue floor 0.3% of usable-text posts (~52 posts, ~1.1/day). Structurally cannot clear the baseline_mean >= 0.5/day support gate over this window, so it would produce a permanently empty alert panel. Still coded -- an atrocity claim belongs in the record even when it cannot be trend-alerted.",
+     "crosswalk_from": [],
+     "crosswalk_to": []
+    }
+   }
+  }
+ },
+ "crosswalk": {
+  "border_conflicts": [
+   "a07_4_border_incidents"
+  ],
+  "border_issues": [
+   "a07_border_issues"
+  ],
+  "bri": [
+   "a03_infrastructure_connectivity"
+  ],
+  "domestic_instability": [
+   "a08_3_domestic_stability_narratives"
+  ],
+  "economic_relations": [
+   "a02_economic_relations"
+  ],
+  "energy_security": [
+   "a04_energy_security"
+  ],
+  "humanitarian_dimension": [
+   "a10_humanitarian"
+  ],
+  "insurgencies": [
+   "a08_internal_conflict_external_role"
+  ],
+  "internal_conflict_china_role": [
+   "a08_internal_conflict_external_role"
+  ],
+  "international_pressure": [
+   "b13_threaten"
+  ],
+  "international_relations": [
+   "a01_political_diplomatic_relations"
+  ],
+  "maritime_dimensions": [
+   "a05_maritime"
+  ],
+  "maritime_security": [
+   "a05_maritime"
+  ],
+  "pipeline_vulnerabilities": [
+   "a04_3_energy_infra_security"
+  ],
+  "policy_shifts": [
+   "a01_4_treaties_agreements"
+  ],
+  "political_relations": [
+   "a01_political_diplomatic_relations"
+  ],
+  "project_delays": [
+   "a03_4_initiative_status"
+  ],
+  "sanctions": [
+   "a02_4_sanctions_restrictions"
+  ],
+  "security_military_relations": [
+   "a06_security_military_relations"
+  ],
+  "shipping_disruptions": [
+   "a05_3_sloc"
+  ],
+  "tech_digital_influence": [
+   "a09_technology_digital"
+  ]
+ }
+}

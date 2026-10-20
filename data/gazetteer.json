@@ -1,0 +1,813 @@
+[
+  {
+    "entity_uid": "xi_jinping",
+    "surface_forms": [
+      "Xi Jinping",
+      "Xi",
+      "President Xi"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "li_qiang",
+    "surface_forms": [
+      "Li Qiang",
+      "Premier Li"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "wang_yi",
+    "surface_forms": [
+      "Wang Yi"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "diplomat"
+  },
+  {
+    "entity_uid": "narendra_modi",
+    "surface_forms": [
+      "Narendra Modi",
+      "PM Modi",
+      "Modi"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "s_jaishankar",
+    "surface_forms": [
+      "S. Jaishankar",
+      "Jaishankar",
+      "EAM Jaishankar"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "diplomat"
+  },
+  {
+    "entity_uid": "rajnath_singh",
+    "surface_forms": [
+      "Rajnath Singh"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "sheikh_hasina",
+    "surface_forms": [
+      "Sheikh Hasina",
+      "Hasina"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "muhammad_yunus",
+    "surface_forms": [
+      "Muhammad Yunus",
+      "Yunus"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "shehbaz_sharif",
+    "surface_forms": [
+      "Shehbaz Sharif",
+      "PM Shehbaz"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "asim_munir",
+    "surface_forms": [
+      "Asim Munir",
+      "General Munir"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "military_leader"
+  },
+  {
+    "entity_uid": "min_aung_hlaing",
+    "surface_forms": [
+      "Min Aung Hlaing"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "military_leader"
+  },
+  {
+    "entity_uid": "vladimir_putin",
+    "surface_forms": [
+      "Vladimir Putin",
+      "Putin"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "sergey_lavrov",
+    "surface_forms": [
+      "Sergey Lavrov",
+      "Lavrov"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "diplomat"
+  },
+  {
+    "entity_uid": "volodymyr_zelensky",
+    "surface_forms": [
+      "Volodymyr Zelensky",
+      "Zelensky",
+      "Zelenskyy"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "china_mfa",
+    "surface_forms": [
+      "Ministry of Foreign Affairs",
+      "Chinese Foreign Ministry",
+      "MOFA"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "ministry"
+  },
+  {
+    "entity_uid": "india_mea",
+    "surface_forms": [
+      "Ministry of External Affairs",
+      "MEA"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "ministry"
+  },
+  {
+    "entity_uid": "china_mnd",
+    "surface_forms": [
+      "Ministry of National Defence",
+      "Chinese Defence Ministry"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "ministry"
+  },
+  {
+    "entity_uid": "cccc",
+    "surface_forms": [
+      "China Communications Construction Company",
+      "CCCC"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "state_owned_enterprise"
+  },
+  {
+    "entity_uid": "cosco",
+    "surface_forms": [
+      "COSCO Shipping",
+      "COSCO"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "state_owned_enterprise"
+  },
+  {
+    "entity_uid": "chec",
+    "surface_forms": [
+      "China Harbour Engineering Company",
+      "CHEC"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "state_owned_enterprise"
+  },
+  {
+    "entity_uid": "sinopec",
+    "surface_forms": [
+      "Sinopec"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "state_owned_enterprise"
+  },
+  {
+    "entity_uid": "cnpc",
+    "surface_forms": [
+      "CNPC",
+      "China National Petroleum Corporation"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "state_owned_enterprise"
+  },
+  {
+    "entity_uid": "pla",
+    "surface_forms": [
+      "PLA",
+      "People's Liberation Army",
+      "解放军"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "armed_group"
+  },
+  {
+    "entity_uid": "pla_navy",
+    "surface_forms": [
+      "PLA Navy",
+      "PLAN"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "armed_group"
+  },
+  {
+    "entity_uid": "isi",
+    "surface_forms": [
+      "ISI",
+      "Inter-Services Intelligence"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "armed_group"
+  },
+  {
+    "entity_uid": "let",
+    "surface_forms": [
+      "Lashkar-e-Taiba",
+      "LeT"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "armed_group"
+  },
+  {
+    "entity_uid": "jem",
+    "surface_forms": [
+      "Jaish-e-Mohammed",
+      "JeM"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "armed_group"
+  },
+  {
+    "entity_uid": "arakan_army",
+    "surface_forms": [
+      "Arakan Army"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "armed_group"
+  },
+  {
+    "entity_uid": "bri",
+    "surface_forms": [
+      "Belt and Road Initiative",
+      "BRI",
+      "One Belt One Road"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "international_org"
+  },
+  {
+    "entity_uid": "sco",
+    "surface_forms": [
+      "Shanghai Cooperation Organisation",
+      "SCO"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "international_org"
+  },
+  {
+    "entity_uid": "saarc",
+    "surface_forms": [
+      "SAARC",
+      "South Asian Association for Regional Cooperation"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "international_org"
+  },
+  {
+    "entity_uid": "bimstec",
+    "surface_forms": [
+      "BIMSTEC"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "international_org"
+  },
+  {
+    "entity_uid": "adb",
+    "surface_forms": [
+      "Asian Development Bank",
+      "ADB"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "international_org"
+  },
+  {
+    "entity_uid": "aiib",
+    "surface_forms": [
+      "AIIB",
+      "Asian Infrastructure Investment Bank"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "international_org"
+  },
+  {
+    "entity_uid": "huawei",
+    "surface_forms": [
+      "Huawei"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "business_org"
+  },
+  {
+    "entity_uid": "xiaomi",
+    "surface_forms": [
+      "Xiaomi"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "business_org"
+  },
+  {
+    "entity_uid": "byd",
+    "surface_forms": [
+      "BYD"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "business_org"
+  },
+  {
+    "entity_uid": "adani_group",
+    "surface_forms": [
+      "Adani Group",
+      "Adani"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "business_org"
+  },
+  {
+    "entity_uid": "reliance",
+    "surface_forms": [
+      "Reliance Industries",
+      "Reliance"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "business_org"
+  },
+  {
+    "entity_uid": "gwadar_port",
+    "surface_forms": [
+      "Gwadar",
+      "Gwadar Port"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "port"
+  },
+  {
+    "entity_uid": "hambantota_port",
+    "surface_forms": [
+      "Hambantota",
+      "Hambantota Port"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "port"
+  },
+  {
+    "entity_uid": "chittagong_port",
+    "surface_forms": [
+      "Chittagong",
+      "Chittagong Port"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "port"
+  },
+  {
+    "entity_uid": "kyaukpyu_port",
+    "surface_forms": [
+      "Kyaukpyu",
+      "Kyaukpyu Port"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "port"
+  },
+  {
+    "entity_uid": "colombo_port",
+    "surface_forms": [
+      "Colombo Port",
+      "Colombo"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "port"
+  },
+  {
+    "entity_uid": "djibouti_base",
+    "surface_forms": [
+      "Djibouti"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "port"
+  },
+  {
+    "entity_uid": "sittwe_port",
+    "surface_forms": [
+      "Sittwe",
+      "Sittwe Port"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "port"
+  },
+  {
+    "entity_uid": "doklam",
+    "surface_forms": [
+      "Doklam"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "border_town"
+  },
+  {
+    "entity_uid": "galwan_valley",
+    "surface_forms": [
+      "Galwan Valley",
+      "Galwan"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "border_town"
+  },
+  {
+    "entity_uid": "pangong_tso",
+    "surface_forms": [
+      "Pangong Tso",
+      "Pangong Lake"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "border_town"
+  },
+  {
+    "entity_uid": "cpec",
+    "surface_forms": [
+      "China-Pakistan Economic Corridor",
+      "CPEC"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "economic_zone"
+  },
+  {
+    "entity_uid": "gwadar_sez",
+    "surface_forms": [
+      "Gwadar Special Economic Zone",
+      "Gwadar SEZ"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "economic_zone"
+  },
+  {
+    "entity_uid": "kyaukpyu_kunming_pipeline",
+    "surface_forms": [
+      "Kyaukpyu-Kunming pipeline",
+      "China-Myanmar pipeline"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "pipeline"
+  },
+  {
+    "entity_uid": "china_pakistan_pipeline",
+    "surface_forms": [
+      "China-Pakistan pipeline"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "pipeline"
+  },
+  {
+    "entity_uid": "china_nepal_railway",
+    "surface_forms": [
+      "China-Nepal railway",
+      "Trans-Himalayan railway"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "railway"
+  },
+  {
+    "entity_uid": "kunming_singapore_railway",
+    "surface_forms": [
+      "Kunming-Singapore railway",
+      "Pan-Asia Railway"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "railway"
+  },
+  {
+    "entity_uid": "united_states",
+    "surface_forms": [
+      "United States",
+      "US",
+      "U. S.",
+      "U.S.",
+      "USA",
+      "America",
+      "США",
+      "美国",
+      "美"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "india",
+    "surface_forms": [
+      "India",
+      "भारत",
+      "印度"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "china",
+    "surface_forms": [
+      "China",
+      "中国",
+      "中國"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "iran",
+    "surface_forms": [
+      "Iran",
+      "伊朗",
+      "ইরান",
+      "ईरान"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "russia",
+    "surface_forms": [
+      "Russia",
+      "России",
+      "Россия",
+      "俄罗斯",
+      "रूस"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "ukraine",
+    "surface_forms": [
+      "Ukraine",
+      "Украины",
+      "Украина",
+      "乌克兰",
+      "यूक्रेन"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "pakistan",
+    "surface_forms": [
+      "Pakistan",
+      "पाकिस्तान",
+      "巴基斯坦",
+      "পাকিস্তান"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "bangladesh",
+    "surface_forms": [
+      "Bangladesh",
+      "বাংলাদেশ",
+      "बांग्लादेश",
+      "孟加拉国"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "israel",
+    "surface_forms": [
+      "Israel",
+      "以色列",
+      "इजराइल",
+      "ইসরায়েল"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "myanmar",
+    "surface_forms": [
+      "Myanmar",
+      "缅甸",
+      "Burma"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "japan",
+    "surface_forms": [
+      "Japan",
+      "日本"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "taiwan",
+    "surface_forms": [
+      "Taiwan",
+      "台湾",
+      "台灣"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "canada",
+    "surface_forms": [
+      "Canada",
+      "加拿大"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "philippines",
+    "surface_forms": [
+      "Philippines",
+      "菲律宾"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "singapore",
+    "surface_forms": [
+      "Singapore",
+      "新加坡"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "united_kingdom",
+    "surface_forms": [
+      "UK",
+      "United Kingdom",
+      "Britain",
+      "英国"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "european_union",
+    "surface_forms": [
+      "EU",
+      "European Union",
+      "ЕС",
+      "欧盟"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "international_org"
+  },
+  {
+    "entity_uid": "kyiv",
+    "surface_forms": [
+      "Kyiv",
+      "Kiev",
+      "Киев"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "moscow",
+    "surface_forms": [
+      "Moscow",
+      "Москва",
+      "莫斯科"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "beijing",
+    "surface_forms": [
+      "Beijing",
+      "北京"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "new_delhi",
+    "surface_forms": [
+      "New Delhi",
+      "Delhi",
+      "नई दिल्ली",
+      "दिल्ली"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "tehran",
+    "surface_forms": [
+      "Tehran",
+      "德黑兰",
+      "तेहरान"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "washington_dc",
+    "surface_forms": [
+      "Washington",
+      "Washington DC",
+      "华盛顿"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": null
+  },
+  {
+    "entity_uid": "strait_of_hormuz",
+    "surface_forms": [
+      "Strait of Hormuz",
+      "Hormuz",
+      "霍尔木兹海峡"
+    ],
+    "entity_type": "LOCATION",
+    "entity_subtype": "port"
+  },
+  {
+    "entity_uid": "donald_trump",
+    "surface_forms": [
+      "Donald Trump",
+      "Trump",
+      "特朗普",
+      "डोनाल्ड ट्रंप",
+      "ট্রাম্প"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "benjamin_netanyahu",
+    "surface_forms": [
+      "Netanyahu",
+      "Benjamin Netanyahu",
+      "内塔尼亚胡"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "andy_burnham",
+    "surface_forms": [
+      "Andy Burnham",
+      "Burnham"
+    ],
+    "entity_type": "PERSON",
+    "entity_subtype": "political_leader"
+  },
+  {
+    "entity_uid": "us_military",
+    "surface_forms": [
+      "美军",
+      "US Military",
+      "U.S. Military"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "military_leader"
+  },
+  {
+    "entity_uid": "xinhua",
+    "surface_forms": [
+      "新华社",
+      "Xinhua"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "state_owned_enterprise"
+  },
+  {
+    "entity_uid": "nato",
+    "surface_forms": [
+      "NATO",
+      "北约",
+      "НАТО"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "international_org"
+  },
+  {
+    "entity_uid": "hezbollah",
+    "surface_forms": [
+      "Hezbollah",
+      "真主党"
+    ],
+    "entity_type": "ORG",
+    "entity_subtype": "armed_group"
+  }
+]
