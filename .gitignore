@@ -21,6 +21,7 @@ data/*
 !data/taxonomy_cameo.json
 !data/thresholds_cameo.json
 !data/gazetteer.json
+!data/publisher_registry.csv   # reviewable config: domains + countries only, no article content
 # data/calibration_cameo.csv holds raw post text — kept local on purpose.
 
 *.duckdb
@@ -39,6 +40,7 @@ reports/*.json
 reports/*.csv
 reports/*.log
 reports/*.log.*
+reports/news/      # pilot samples contain headlines
 
 # ── Logs / runtime state ─────────────────────────────────────────────────
 logs/

@@ -11,6 +11,14 @@ matplotlib>=3.7.0
 langdetect>=1.0.9
 textstat>=0.7.3
 
+# News Trending & Emerging Events engine
+shapely>=2.0
+pytz
+requests>=2.31
+pytest>=8.0
+# optional, only for UI/tests/check_news_ui.py (headless-browser dashboard test)
+# playwright
+
 # Layer 2–3 (ontology + NLP) — install when running those stages
 umap-learn>=0.5.5
 hdbscan>=0.8.33

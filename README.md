@@ -279,3 +279,13 @@ and must be regenerated locally by running the pipeline against the production c
 - `data/calibration_cameo.csv` — hand-judging sample containing raw post text
 - `.env`, `delivery/.env` — credentials
 - `logs/`, `.venv/`, `node_modules/`
+
+---
+
+## News Trending & Emerging Events engine (additive)
+
+A news-media adaptation of the same statistical core lives alongside the social pipeline: `scripts/20_news_run.py`
+(pilot / range / backfill / incremental / status / plan), `scripts/lib/news_*.py`, `UI/news.html` + `UI/news_server.py`.
+It reads `shaktidb_news` (PostgreSQL) and the `full-articles` OpenSearch index **read-only**, stores derived data in
+`data/news_*.duckdb`, and supports AOI-specific baselines and FDR-controlled alerts. Full runbook, limits and the
+approval gate for historical backfill: [`docs/NEWS_ENGINE.md`](docs/NEWS_ENGINE.md).
