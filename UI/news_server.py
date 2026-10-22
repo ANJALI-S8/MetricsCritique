@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
+<<<<<<< HEAD
 """Serve the Trending-news page (UI/trending.html), the advanced dashboard (UI/news.html) and their read-only API.
+=======
+"""Serve the News Trending & Emerging Events dashboard (UI/news.html) and its read-only API.
+>>>>>>> origin/main
 
   .venv/bin/python UI/news_server.py 8878                 # http://127.0.0.1:8878/
   NEWS_UI_DB=data/news_pilot_india_bangladesh.duckdb .venv/bin/python UI/news_server.py 8878
@@ -23,8 +27,12 @@ sys.path.insert(0, str(HERE))
 import news_api as NA  # noqa: E402
 
 API = NA.NewsAPI()
+<<<<<<< HEAD
 STATIC_OK = ("/trending.html", "/assets/trending.css", "/assets/trending.js", "/news.html", "/assets/dash.css", "/assets/news.css",
              "/assets/news.js", "/favicon.ico")
+=======
+STATIC_OK = ("/news.html", "/assets/dash.css", "/assets/news.css", "/assets/news.js", "/favicon.ico")
+>>>>>>> origin/main
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -60,7 +68,11 @@ class Handler(SimpleHTTPRequestHandler):
         if u.path.startswith("/api/news/"):
             return self._api(lambda: NA.route_get(API, u.path, parse_qs(u.query)))
         if u.path in ("/", ""):
+<<<<<<< HEAD
             self.path = "/trending.html"           # the simple Top-trending page; the advanced dashboard is /news.html
+=======
+            self.path = "/news.html"
+>>>>>>> origin/main
             u = urlparse(self.path)
         if u.path not in STATIC_OK:
             return self._json({"error": "not found"}, 404)

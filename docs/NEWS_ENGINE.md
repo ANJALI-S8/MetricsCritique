@@ -124,6 +124,7 @@ NEWS_UI_DB=data/news_pilot_india_bangladesh.duckdb .venv/bin/python UI/news_serv
 The server also copes with a running pipeline (it reads a point-in-time copy when DuckDB's write lock is held).
 
 
+<<<<<<< HEAD
 ## Trending news page (the default UI at `/`)
 
 Simple page, no map: choose a **country**, a **topic** (Domain → Topic → Subtopic), or **both**, and a period (24 h / 3 days / 7 days);
@@ -157,14 +158,22 @@ it shows the **top 10 trending stories** ranked strongest first ("Show more" up 
 * Tests: `scripts/tests/test_news_trending.py` (planted-answer synthetic world), `scripts/tests/test_news_trending_real.py` (every displayed
   number recomputed with SQL on the pilot DB, 3 windows × 5 scope cases), `UI/tests/check_trending_ui.py` (browser).
 
+=======
+>>>>>>> origin/main
 ## Topic filter and source citations (dashboard)
 
 * **Filter**: Domain → Topic → Subtopic dropdowns plus an **All Topics** reset, built from the stored `taxonomy_node` hierarchy
   (in-scope nodes only). Subtopics are grouped under their real parent category. It combines with the area (country / state /
   drawn area / *event* vs *mentioned-in*): every number is recomputed for *area AND topic*.
+<<<<<<< HEAD
 * **Matching** uses each article's **stored label** only - never headline text. An **event** matches when a **strict majority**
   of its labelled, non-duplicate articles carry the selected node at that level (and its ancestors); the share of its articles that carry
   the node is shown. An event whose articles disagree matches no single topic, only the level they do agree on. Trend rows and node alerts match when the node is the selection or one of its descendants.
+=======
+* **Matching** uses each article's **stored label** only - never headline text. An **event** matches when the plurality label of
+  its labelled, non-duplicate articles (tie → lower taxonomy code) is the selected node; the share of its articles that carry
+  the node is shown. Trend rows and node alerts match when the node is the selection or one of its descendants.
+>>>>>>> origin/main
 * **Subtopic series** are not stored by the pipeline; they are computed on demand, read-only, with the same function
   (`persist=False`), and cached per database version. Their FDR family is the subtopic series of the area.
 * **Citations**: every article is shown as *publisher — title ↗ date (UTC)* linked to the original URL (http/https only; a record
@@ -178,8 +187,12 @@ it shows the **top 10 trending stories** ranked strongest first ("Show more" up 
 ```bash
 .venv/bin/python -m pytest scripts/tests/test_news_*.py -q          # no network, no production data
 .venv/bin/python UI/tests/check_news_ui.py --url http://127.0.0.1:8878 --shots /tmp/shots          # headless-browser dashboard test (needs playwright + server)
+<<<<<<< HEAD
 .venv/bin/python UI/tests/check_news_filter_ui.py --url http://127.0.0.1:8878 --shots /tmp/shots   # topic filter + citations vs independent SQL (advanced page)
 .venv/bin/python UI/tests/check_trending_ui.py --url http://127.0.0.1:8878 --shots /tmp/shots      # the Top-trending page
+=======
+.venv/bin/python UI/tests/check_news_filter_ui.py --url http://127.0.0.1:8878 --shots /tmp/shots   # topic filter + citations vs independent SQL
+>>>>>>> origin/main
 ```
 
 Legacy tests (`scripts/tests/test_*.py` without `news`) are standalone scripts; run them as before.

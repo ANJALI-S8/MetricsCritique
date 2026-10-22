@@ -56,7 +56,11 @@ def main() -> int:
         page.on("dialog", lambda d: (dialogs.append(d.message), d.dismiss()))
 
         # ---------- load + first AOI ----------
+<<<<<<< HEAD
         page.goto(a.url + "/news.html")
+=======
+        page.goto(a.url + "/")
+>>>>>>> origin/main
         page.wait_for_selector("#ev-tbl tbody tr", timeout=60000)
         sub = page.inner_text("#n-sub")
         check("header shows database, range and read-only", "read-only" in sub and "articles published" in sub, sub[:120])
@@ -190,7 +194,11 @@ def main() -> int:
                 al["rationale"] = evil
             route.fulfill(response=resp, body=json.dumps(j))
         p2.route("**/api/news/aoi?*", tamper)
+<<<<<<< HEAD
         p2.goto(a.url + "/news.html")
+=======
+        p2.goto(a.url + "/")
+>>>>>>> origin/main
         p2.wait_for_selector("#ev-tbl tbody tr", timeout=60000)
         check("hostile headline rendered as text, no element injected", p2.locator("#events img").count() == 0 and p2.locator("#events script").count() == 0
               and "<img" in p2.inner_text("#events"))

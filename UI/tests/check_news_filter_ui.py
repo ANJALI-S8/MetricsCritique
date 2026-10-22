@@ -99,7 +99,11 @@ def main() -> int:
             settle()
             return j
 
+<<<<<<< HEAD
         page.goto(a.url + "/news.html")
+=======
+        page.goto(a.url + "/")
+>>>>>>> origin/main
         page.wait_for_selector("#ev-tbl tbody tr", timeout=90000)
         settle()
         base_articles = int(re.sub(r"\D", "", page.inner_text("#kpis .n-kpi:first-child b")))
@@ -289,7 +293,11 @@ def main() -> int:
                     s["title"] = evil
             route.fulfill(response=resp, body=json.dumps(jj))
         page2.route("**/api/news/aoi?*", tamper)
+<<<<<<< HEAD
         page2.goto(a.url + "/news.html")
+=======
+        page2.goto(a.url + "/")
+>>>>>>> origin/main
         page2.wait_for_selector("#articles .n-art", timeout=90000)
         page2.locator("#ev-tbl details.n-cite summary").first.click()
         check("hostile titles/publishers render as text only", page2.locator("#articles img, #articles script, #events img, #alerts img").count() == 0 and not dialogs)

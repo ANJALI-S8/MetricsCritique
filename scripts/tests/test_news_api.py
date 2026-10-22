@@ -201,16 +201,26 @@ def test_never_matches_on_headline_text(tapi):
     assert all(i["tax_topic"] == "Topic T01" for i in t1["items"])
 
 
+<<<<<<< HEAD
 def test_event_matches_only_on_majority_agreement(tapi):
     api, _ = tapi
     ids = lambda code: {e["event_id"] for e in api.bundle(aoi_id=TM.AOI_X.aoi_id, tax=code)["events"]}
     assert ids("D01.T01") == {"ev_pure1"}                      # ev_tie is 2 vs 2: NO topic has a majority, so neither topic claims it
     assert ids("D01.T02") == {"ev_major2"}                     # 3 of 4 members
     assert ids("D01") == {"ev_pure1", "ev_major2", "ev_tie"}   # but all of its articles agree on the DOMAIN
+=======
+def test_event_matches_by_primary_label_with_deterministic_ties(tapi):
+    api, _ = tapi
+    ids = lambda code: {e["event_id"] for e in api.bundle(aoi_id=TM.AOI_X.aoi_id, tax=code)["events"]}
+    assert ids("D01.T01") == {"ev_pure1", "ev_tie"}            # tie (2 vs 2) -> lower code D01.T01 wins
+    assert ids("D01.T02") == {"ev_major2"}                     # 3 of 4 members
+    assert ids("D01") == {"ev_pure1", "ev_major2", "ev_tie"}
+>>>>>>> origin/main
     share = {e["event_id"]: e["tax_share"] for e in api.bundle(aoi_id=TM.AOI_X.aoi_id, tax="D01.T02")["events"]}
     assert share["ev_major2"] == pytest.approx(0.75)           # shown to the user, never hidden
 
 
+<<<<<<< HEAD
 def test_event_rows_show_the_agreed_path_or_an_honest_status(tapi):
     api, _ = tapi
     ev = {e["event_id"]: e for e in api.bundle(aoi_id=TM.AOI_X.aoi_id, tax="D01")["events"]}
@@ -220,6 +230,8 @@ def test_event_rows_show_the_agreed_path_or_an_honest_status(tapi):
     assert d["domain_name"] and d["topic_name"] is None            # the drawer agrees with the table
 
 
+=======
+>>>>>>> origin/main
 def test_alerts_and_nodes_follow_the_filter(tapi):
     api, _ = tapi
     b = api.bundle(aoi_id=TM.AOI_X.aoi_id, tax="D01.T01")

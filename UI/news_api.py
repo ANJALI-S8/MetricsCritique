@@ -12,7 +12,10 @@ from __future__ import annotations
 
 import json
 import math
+<<<<<<< HEAD
 import re
+=======
+>>>>>>> origin/main
 import shutil
 import sys
 import tempfile
@@ -33,12 +36,18 @@ from lib import news_events as EV  # noqa: E402
 from lib import news_geo as G  # noqa: E402
 from lib import news_metrics as M  # noqa: E402
 from lib import news_publishers as PB  # noqa: E402
+<<<<<<< HEAD
 from lib import news_taxonomy as TX  # noqa: E402
 from lib import news_trending as TR  # noqa: E402
 from lib.news_store import Store  # noqa: E402
 
 MAX_BODY = 256 * 1024
 _EVENT_ID = re.compile(r"^ev_[A-Za-z0-9_]{1,28}$")     # plain identifiers only
+=======
+from lib.news_store import Store  # noqa: E402
+
+MAX_BODY = 256 * 1024
+>>>>>>> origin/main
 MAX_VERTICES = 500
 MAX_EVENTS = 300
 ARTICLE_PAGE = 50
@@ -100,7 +109,10 @@ class NewsAPI:
         self._geojson_cache: dict = {}
         self._registry: Optional[dict] = None
         self._sub_cache: dict = {}
+<<<<<<< HEAD
         self._trend_cache: Optional[tuple] = None
+=======
+>>>>>>> origin/main
         self._snap_dir = Path(tempfile.gettempdir()) / "news_api_snapshots"
 
     # ---- plumbing ----------------------------------------------------------------------
@@ -313,6 +325,7 @@ class NewsAPI:
                            tax_subtopic=nm(r.subtopic_id), event_id=r.cluster_id, place=r.ev_place, country=r.ev_country_iso,
                            loc_status=r.loc_status) for r in rows.itertuples()]
 
+<<<<<<< HEAD
     def _event_paths(self, st: Store, ids: list) -> pd.DataFrame:
         """Per event: the taxonomy path its labelled, non-duplicate articles AGREE on (strict majority, top-down; see
         lib/news_taxonomy.py - the same rule as the Trending page), plus its status (assigned / outside / mixed /
@@ -340,6 +353,23 @@ class NewsAPI:
             st.con.unregister("_etx")
         out = paths[[sel["tier"], "n_labelled"]].rename(columns={sel["tier"]: "primary_label"}).reset_index()
         return out.merge(n, on="event_id", how="left").fillna({"n_match": 0})
+=======
+    def _event_tax(self, st: Store, ids: list, sel: dict) -> pd.DataFrame:
+        """Per event: its PRIMARY (plurality) label at the selected level over its labelled, non-duplicate member
+        articles, and how many members carry the selected node. Deterministic tie-break on code."""
+        st.con.register("_etx", pd.DataFrame({"event_id": ids}))
+        try:
+            col = sel["col"]
+            return st.df(f"""WITH c AS (SELECT cluster_id, {col} AS lab, count(*) n FROM article_fact
+                                       WHERE NOT is_duplicate AND has_label AND cluster_id IN (SELECT event_id FROM _etx) GROUP BY 1, 2),
+                             r AS (SELECT cluster_id, lab, n, row_number() OVER (PARTITION BY cluster_id ORDER BY n DESC, lab) rk,
+                                          sum(n) OVER (PARTITION BY cluster_id) tot FROM c)
+                             SELECT cluster_id AS event_id, lab AS primary_label, tot AS n_labelled,
+                                    coalesce((SELECT n FROM c c2 WHERE c2.cluster_id = r.cluster_id AND c2.lab = ?), 0) AS n_match
+                             FROM r WHERE rk = 1""", [sel["code"]])
+        finally:
+            st.con.unregister("_etx")
+>>>>>>> origin/main
 
     def _event_cites(self, st: Store, ids, sel: Optional[dict], k: int = 3) -> dict:
         """Up to k citations per event: the earliest article of each distinct publisher (articles that carry the
@@ -607,16 +637,25 @@ class NewsAPI:
             if c not in ev:
                 ev[c] = d
             ev[c] = ev[c].fillna(d)
+<<<<<<< HEAD
         pth = self._event_paths(st, ev["event_id"].tolist())      # stored per-event modal labels are NOT used: no agreement test
         ev["tax_status"] = ev["event_id"].map(pth["tax_status"]).fillna("unlabelled")
         for t in ("domain", "topic", "category", "subtopic"):
             ev[f"{t}_name"] = ev["event_id"].map(pth[t]).map(lambda c: tax.get(c) if isinstance(c, str) else None)
+=======
+        ev["topic_name"] = ev["topic_id"].map(lambda c: tax.get(c, c))
+        ev["domain_name"] = ev["domain_id"].map(lambda c: tax.get(c, c))
+>>>>>>> origin/main
         ev["last_seen"] = pd.to_datetime(ev["last_seen"], utc=True)
         ev = ev.sort_values(["emerging_alert", "last_seen", "n_publishers"], ascending=[False, False, False]).head(MAX_EVENTS)
         keep = ["event_id", "rep_title", "rep_url", "n_articles", "n_publishers", "n_copies", "syndication_share", "first_seen",
                 "last_seen", "duration_hours", "active_days", "articles_24h", "growth_24h", "accel_6h", "half_life_days",
                 "publisher_pie", "cross_source_ratio", "loc_country_iso", "loc_adm1_code", "loc_confidence", "loc_share",
+<<<<<<< HEAD
                 "n_located", "aoi_share", "topic_name", "domain_name", "category_name", "subtopic_name", "tax_status", "emerging_p", "emerging_q", "emerging_alert",
+=======
+                "n_located", "aoi_share", "topic_name", "domain_name", "emerging_p", "emerging_q", "emerging_alert",
+>>>>>>> origin/main
                 "emerging_support_ok", "emerging_note", "emerging_n_ref", "n_developments", "support_note", "tax_share"]
         ev = ev.rename(columns={"n_ref": "emerging_n_ref"})
         cites = self._event_cites(st, ev["event_id"].tolist(), sel, k=3)
@@ -636,6 +675,7 @@ class NewsAPI:
                 "status", "rationale"]
         return a[[c for c in cols if c in a.columns]].to_dict("records")
 
+<<<<<<< HEAD
 
     # ---- trending stories (read-only; computed on request from the stored clusters) --------------------------
     def _trend_data(self, st: Store) -> TR.TrendData:
@@ -770,6 +810,11 @@ class NewsAPI:
     # ---- event detail ----------------------------------------------------------------------------------
     def event_detail(self, event_id: str, aoi_id: Optional[str] = None) -> dict:
         if not (isinstance(event_id, str) and _EVENT_ID.match(event_id)):
+=======
+    # ---- event detail ----------------------------------------------------------------------------------
+    def event_detail(self, event_id: str, aoi_id: Optional[str] = None) -> dict:
+        if not (isinstance(event_id, str) and event_id.startswith("ev_") and len(event_id) <= 32):
+>>>>>>> origin/main
             raise ApiError("bad event id")
         with self.store() as st:
             ev = st.df("SELECT * FROM event_cluster WHERE event_id = ?", [event_id])
@@ -777,7 +822,11 @@ class NewsAPI:
                 raise ApiError("unknown event", 404)
             e = ev.iloc[0].drop(labels=["centroid_sum"]).to_dict()
             m = st.df("""SELECT f.source_table, f.article_id, f.title, f.url, f.source_domain, f.published_at, f.is_duplicate,
+<<<<<<< HEAD
                                 f.cluster_sim, f.has_label, f.domain_id, f.topic_id, f.category_id, f.subtopic_id, g.ev_place, g.ev_country_iso, g.ev_adm1_code, g.ev_precision,
+=======
+                                f.cluster_sim, f.has_label, f.topic_id, g.ev_place, g.ev_country_iso, g.ev_adm1_code, g.ev_precision,
+>>>>>>> origin/main
                                 g.loc_status, g.geo_inconsistent
                          FROM article_fact f JOIN article_geo g USING (source_table, article_id)
                          WHERE f.cluster_id = ? ORDER BY f.published_at LIMIT 600""", [event_id])
@@ -800,10 +849,14 @@ class NewsAPI:
         hourly = live.set_index("published_at").resample("3h").size() if len(live) else pd.Series(dtype=int)
         loc_counts = live.groupby(live["ev_country_iso"].fillna("unlocated")).size().sort_values(ascending=False).to_dict()
         pub_counts = live.groupby("source_domain").size().sort_values(ascending=False).head(15).to_dict()
+<<<<<<< HEAD
         pth = TX.assign_paths(m[~m["is_duplicate"]].assign(event_id=event_id), "event_id", min_agreement=C.PARAMS["taxonomy_min_agreement"])
         agreed = {t: (pth[t].iat[0] if len(pth) else None) for t in ("domain", "topic", "category", "subtopic")}
         names = {f"{t}_name": (tax.get(c) if isinstance(c, str) else None) for t, c in agreed.items()}
         return clean({"event": {**e, **names, "tax_status": pth["tax_status"].iat[0] if len(pth) else "unlabelled"},
+=======
+        return clean({"event": {**e, "topic_name": tax.get(e.get("topic_id")), "domain_name": tax.get(e.get("domain_id"))},
+>>>>>>> origin/main
                       "metrics": metrics.to_dict("records")[0] if len(metrics) else None, "articles": arts,
                       "n_copies_exact": int(dups), "timeline_3h": [[str(k), int(v)] for k, v in hourly.items()],
                       "location_counts": loc_counts, "top_publishers": pub_counts, "tests": tests, "developments": devs,
@@ -846,12 +899,15 @@ def route_get(api: NewsAPI, path: str, qs: dict) -> Any:
         return api.bundle(aoi_id=one("id"), level=one("level", "topic"), tax=one("tax"))
     if path == "/api/news/event":
         return api.event_detail(one("id"), one("aoi"))
+<<<<<<< HEAD
     if path == "/api/news/trending_meta":
         return api.trending_meta()
     if path == "/api/news/trending":
         return api.trending(one("country"), one("tax"), one("window", "3d"), one("limit"))
     if path == "/api/news/story_articles":
         return api.story_articles([i for i in (one("ids") or "").split(",") if i], one("offset", 0), one("limit", 50))
+=======
+>>>>>>> origin/main
     if path == "/api/news/alerts":
         return api.alerts(one("aoi"), one("kind"), one("status", "active"), one("limit", 200))
     raise ApiError("unknown endpoint", 404)

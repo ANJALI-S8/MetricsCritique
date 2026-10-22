@@ -386,7 +386,11 @@
           (e.sources && e.sources.length) ? h('details', { class: 'n-cite', onclick: function (ev) { ev.stopPropagation(); }, onkeydown: function (ev) { ev.stopPropagation(); } }, [h('summary', null, 'Sources (' + e.sources.length + ' of ' + e.n_articles + ' articles)'), e.sources.map(citeNode)]) : null]),
         h('td', null, when(e.first_seen)), h('td', { class: 'num' }, String(e.n_articles)), h('td', { class: 'num' }, String(e.n_publishers)),
         h('td', { class: 'num' }, num(e.growth_24h, 2)), h('td', { class: 'num' }, num(e.accel_6h, 2)), h('td', { class: 'num' }, num(e.duration_hours, 0)),
+<<<<<<< HEAD
         h('td', null, loc), h('td', { class: 'num', title: e.emerging_note || '' }, qfmt(e.emerging_q)), h('td', { title: taxPath(e) }, e.topic_name || (TAXST[e.tax_status] || ''))]));
+=======
+        h('td', null, loc), h('td', { class: 'num', title: e.emerging_note || '' }, qfmt(e.emerging_q)), h('td', null, e.topic_name || '')]));
+>>>>>>> origin/main
     });
     if (rows.length > 200) tb.appendChild(h('tr', null, h('td', { colspan: EVCOLS.length, class: 'n-muted' }, 'Showing 200 of ' + rows.length + '. Narrow the filters.')));
     if (!rows.length) tb.appendChild(h('tr', null, h('td', { colspan: EVCOLS.length, class: 'n-muted' }, 'No events match the filters.')));
@@ -452,6 +456,7 @@
   }
   function closeEvent() { document.body.classList.remove('drawer'); $('n-drawer').setAttribute('aria-hidden', 'true'); }
   function kv(label, v) { return h('div', { class: 'n-kpi' }, [h('span', null, label), h('b', { style: 'font-size:16px' }, v)]); }
+<<<<<<< HEAD
   // taxonomy the event's articles AGREE on (strict majority); otherwise an honest status instead of a guessed label
   var TAXST = { mixed: 'Mixed topics', outside: 'Outside the taxonomy', unlabelled: 'Unlabelled' };
   function taxPath(e) { var p = [e.domain_name, e.topic_name, e.category_name, e.subtopic_name].filter(Boolean); return p.length ? p.join(' › ') : (TAXST[e.tax_status] || 'Unlabelled'); }
@@ -459,6 +464,12 @@
     var e = d.event, m = d.metrics || {}, body = clear($('dr-body'));
     $('dr-title').textContent = e.rep_title || e.event_id;
     body.appendChild(h('div', { class: 'n-2', style: 'margin:6px 0' }, [taxPath(e), ' · first seen ' + when(e.first_seen) + ' · last ' + when(e.last_seen)]));
+=======
+  function renderEvent(d) {
+    var e = d.event, m = d.metrics || {}, body = clear($('dr-body'));
+    $('dr-title').textContent = e.rep_title || e.event_id;
+    body.appendChild(h('div', { class: 'n-2', style: 'margin:6px 0' }, [(e.domain_name || '') + ' › ' + (e.topic_name || ''), ' · first seen ' + when(e.first_seen) + ' · last ' + when(e.last_seen)]));
+>>>>>>> origin/main
     body.appendChild(h('div', { class: 'n-grid2' }, [kv('Articles', String(e.n_articles)), kv('Publishers', String(e.n_publishers)), kv('Syndicated copies', String(d.n_copies_exact)),
       kv('Growth 24h', num(m.growth_24h, 2)), kv('Acceleration', num(m.accel_6h, 2)), kv('Duration (h)', num(m.duration_hours, 0)), kv('Half-life (d)', num(m.half_life_days, 1)),
       kv('Publisher diversity', isNum(m.publisher_pie) ? m.publisher_pie.toFixed(2) : na()), kv('Cross-source ratio', num(m.cross_source_ratio, 2))]));

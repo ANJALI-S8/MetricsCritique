@@ -162,6 +162,7 @@ PARAMS: dict = {
     "os_max_retries": 4,
     "pg_batch": 2000,
     "incremental_overlap_hours": 6,  # re-scan window to catch late arrivals (reruns are idempotent)
+<<<<<<< HEAD
     # --- trending stories (read-time ranking; see news_trending.py) ----------------------------------------
     "trend_merge_cos": 0.90,          # events whose centroids are this similar AND overlap in time are ONE story
     "trend_merge_gap_hours": 72,
@@ -183,6 +184,8 @@ PARAMS: dict = {
     "trend_country_min_coverage": 0.25,  # ... and they are at least this share of ALL the story's articles
     "trend_top_n": 10,
     "trend_max_n": 30,
+=======
+>>>>>>> origin/main
     "seed": 20261020,
 }
 
