@@ -26,6 +26,15 @@ Architecture: `current-arch.md`. Running history and open issues:
 6. **Alert on `topic_id`**, not hashtags alone (see `docs/ALERTING_KEYING.md`).
 7. DuckDB is single-writer — don't run two stages that write the same `.duckdb` at once.
 
+## News engine (additive; see `docs/NEWS_ENGINE.md`)
+
+- Sources (`shaktidb_news` PostgreSQL, OpenSearch `full-articles`) are **read-only**: go through `lib/news_sources.py`
+  only. Credentials from env (`lib/news_config.py`); never hardcode or default them.
+- Dates: `published_at` only; unusable dates are excluded and counted, never replaced by scrape time. Missing = NULL, not 0.
+- A historical backfill must never be started without the user's explicit approval (`backfill` needs `--i-approve-backfill`).
+- Event location (GDELT ActionGeo), mentioned-in and publisher location are three separate things; never merge them.
+- Pilot/backfill/incremental share one code path (`lib/news_pipeline.py`); keep it that way. Tests: `pytest scripts/tests/test_news_*.py`.
+
 ## Environment
 
 ```bash
